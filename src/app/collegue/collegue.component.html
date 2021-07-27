@@ -1,7 +1,7 @@
 <div class="text-center mt-5 ">
   <img src="{{ collegue.photoUrl }}">
   <p>{{ collegue.pseudo | uppercase}}</p>
-  <p>{{ collegue.score }}</p>
+  <p>{{ collegue.score | score}}</p>
 </div>
 <app-avis
   (avis)="incrementScore($event)"
