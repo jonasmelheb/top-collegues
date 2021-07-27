@@ -1,6 +1,6 @@
 # TopCollegues
 
-## Deploiment server
+## Deployment link
 
 https://jonasmelheb.github.io/top-collegues/
 
