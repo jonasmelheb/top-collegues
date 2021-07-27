@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Avis} from "../models";
 
 @Component({
@@ -8,8 +9,10 @@ import {Avis} from "../models";
 })
 export class AvisComponent implements OnInit {
 
-  @Input()
-  avis?: Avis
+  @Output() avis = new EventEmitter<Avis>();
+
+  @Input() desactiveJaime = false;
+  @Input() desactiveDeteste = false;
 
   constructor() {
 
@@ -18,11 +21,11 @@ export class AvisComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  mettreAvis(avis: string): void {
-    if (avis == "aimer") {
-      this.avis = Avis.AIMER
-    } else if (avis == "detester") {
-      this.avis = Avis.DETESTER
-    }
+  aimerCollegue() {
+    this.avis.emit(Avis.AIMER);
+  }
+
+  detesterCollegue() {
+    this.avis.emit(Avis.DETESTER);
   }
 }

@@ -1,5 +1,10 @@
 <div class="text-center mt-5 ">
   <img src="{{ collegue.photoUrl }}">
-  <p>{{ collegue.pseudo }}</p>
+  <p>{{ collegue.pseudo | uppercase}}</p>
   <p>{{ collegue.score }}</p>
 </div>
+<app-avis
+  (avis)="incrementScore($event)"
+  [desactiveJaime]="collegue.score >= 1000"
+  [desactiveDeteste]="collegue.score <= -1000">
+</app-avis>

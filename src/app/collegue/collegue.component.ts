@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Collegue} from "../models";
+import {Avis, Collegue} from "../models";
 
 @Component({
   selector: 'app-collegue',
@@ -8,15 +8,18 @@ import {Collegue} from "../models";
 })
 export class CollegueComponent implements OnInit {
 
-  @Input()
-  collegue: Collegue = {
+  @Input() collegue: Collegue = {
     pseudo: "Younes",
-    score: 500,
+    score: 999,
     photoUrl: "https://randomuser.me/api/portraits/men/75.jpg"
   }
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  incrementScore(avis: Avis) {
+    avis == Avis.AIMER ? this.collegue.score++ : this.collegue.score--
   }
 }
