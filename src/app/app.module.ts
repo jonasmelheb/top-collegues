@@ -10,6 +10,7 @@ import { AccueilComponent } from './accueil-component/accueil.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { SColorDirective } from './directives/s-color.directive';
 import { LoopDirective } from './directives/loop.directive';
+import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoopDirective } from './directives/loop.directive';
     AccueilComponent,
     ScorePipe,
     SColorDirective,
-    LoopDirective
+    LoopDirective,
+    HistoriqueVotesComponent
   ],
   imports: [
     BrowserModule,

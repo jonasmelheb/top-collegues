@@ -16,3 +16,7 @@ export interface Vote {
   avis: Avis;
 }
 
+export interface Votes {
+  collegue: Collegue;
+  avis: Avis;
+}

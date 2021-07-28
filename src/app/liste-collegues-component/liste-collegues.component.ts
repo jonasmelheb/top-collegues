@@ -17,6 +17,5 @@ export class ListeColleguesComponent implements OnInit {
     this.service.listerCollegues()
       .then(collegues => this.collegues = collegues)
       .catch(() => this.msgErr = true)
-
   }
 }
