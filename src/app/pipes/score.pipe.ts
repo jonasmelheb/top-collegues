@@ -9,6 +9,6 @@ export class ScorePipe implements PipeTransform {
     if (value >= 0) {
       return `+ ${value}`
     }
-    return `${value}`
+    return `- ${value * -1}`
   }
 }

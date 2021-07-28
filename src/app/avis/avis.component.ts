@@ -4,8 +4,7 @@ import {Avis} from "../models";
 
 @Component({
   selector: 'app-avis',
-  templateUrl: './avis.component.html',
-  styleUrls: ['./avis.component.css']
+  templateUrl: './avis.component.html'
 })
 export class AvisComponent implements OnInit {
 

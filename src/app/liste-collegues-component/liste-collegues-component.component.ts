@@ -3,8 +3,7 @@ import {Collegue, mockCollegues} from '../models';
 
 @Component({
   selector: 'app-liste-collegues-component',
-  templateUrl: './liste-collegues-component.component.html',
-  styleUrls: ['./liste-collegues-component.component.css']
+  templateUrl: './liste-collegues-component.component.html'
 })
 export class ListeColleguesComponentComponent implements OnInit {
 
