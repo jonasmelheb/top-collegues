@@ -6,9 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ScorePipe implements PipeTransform {
 
   transform(value: number, ...args: unknown[]): string {
-    if (value >= 0) {
-      return `+ ${value}`
-    }
-    return `- ${value * -1}`
+    return value >= 0 ? `+ ${value}` : `- ${value * -1}`;
   }
 }

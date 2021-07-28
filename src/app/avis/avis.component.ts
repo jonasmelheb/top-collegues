@@ -6,25 +6,22 @@ import {Avis} from "../models";
   selector: 'app-avis',
   templateUrl: './avis.component.html'
 })
-export class AvisComponent implements OnInit {
+export class AvisComponent {
 
+  // <app-avis (avis)="???"></app-avis>
   @Output() avis = new EventEmitter<Avis>();
 
+  // <app-avis [desactiveJaime]="true"></app-avis>
   @Input() desactiveJaime = false;
+
+  // <app-avis [desactiveDeteste]="false"></app-avis>
   @Input() desactiveDeteste = false;
 
-  constructor() {
-
-  }
-
-  ngOnInit(): void {
-  }
-
-  aimerCollegue() {
+  aimer() {
     this.avis.emit(Avis.AIMER);
   }
 
-  detesterCollegue() {
+  detester() {
     this.avis.emit(Avis.DETESTER);
   }
 }

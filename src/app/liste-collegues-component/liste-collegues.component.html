@@ -1,0 +1,13 @@
+<div class="row">
+  <p *ngIf="msgErr; else listCollegue">
+    Oops, je n'ai pas pu récupéré de collegues.
+  </p>
+  <ng-template #listCollegue>
+    <div *ngFor="let collegue of collegues" class="col col-sm-6 col-md-4 border">
+      <app-collegue [collegue]="collegue"></app-collegue>
+    </div>
+  </ng-template>
+</div>
+
+
+

@@ -1,7 +1,9 @@
 export interface Collegue {
   pseudo: string;
+  nom: string;
+  prenom: string;
+  photo: string;
   score: number;
-  photoUrl: string;
 }
 
 export enum Avis {
@@ -9,11 +11,8 @@ export enum Avis {
   DETESTER
 }
 
-export const mockCollegues: Collegue[] = [
-  {pseudo: 'Younes', score: 999, photoUrl:"https://randomuser.me/api/portraits/men/75.jpg"},
-  {pseudo: 'Younes1', score: 300, photoUrl:"https://randomuser.me/api/portraits/men/76.jpg"},
-  {pseudo: 'Younes2', score: 400, photoUrl:"https://randomuser.me/api/portraits/men/77.jpg"},
-  {pseudo: 'Younes3', score: 100, photoUrl:"https://randomuser.me/api/portraits/men/78.jpg"},
-  {pseudo: 'Younes4', score: 150, photoUrl:"https://randomuser.me/api/portraits/men/79.jpg"},
-  {pseudo: 'Younes5', score: -999, photoUrl:"https://randomuser.me/api/portraits/men/45.jpg"}
-]
+export interface Vote {
+  pseudo: string;
+  avis: Avis;
+}
+

@@ -1,10 +1,19 @@
-<div class="text-center mt-5 ">
-  <img [src]="collegue.photoUrl">
-  <p>{{ collegue.pseudo | uppercase}}</p>
-  <p SColor>{{ collegue.score | score}}</p>
-</div>
-<app-avis
-  (avis)="incrementScore($event)"
-  [desactiveJaime]="collegue.score >= 1000"
-  [desactiveDeteste]="collegue.score <= -1000">
-</app-avis>
+<ng-container *ngIf="collegue; else elseBlock">
+  <div class="text-center mt-5 ">
+    <img [src]="collegue.photo">
+    <p>{{ collegue.pseudo | uppercase}}</p>
+    <p SColor>{{ collegue.score | score}}</p>
+  </div>
+  <app-avis
+    (avis)="incrementScore($event, collegue)"
+    [desactiveJaime]="desactiverJaime"
+    [desactiveDeteste]="desactiverDeteste">
+  </app-avis>
+</ng-container>
+<ng-template #elseBlock>
+  <div>
+    Oops - Collègue obligatoire
+  </div>
+</ng-template>
+
+
