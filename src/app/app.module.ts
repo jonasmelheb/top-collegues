@@ -9,6 +9,7 @@ import { ListeColleguesComponentComponent } from './liste-collegues-component/li
 import { AccueilComponentComponent } from './accueil-component/accueil-component.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { SColorDirective } from './directives/s-color.directive';
+import { LoopDirective } from './directives/loop.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SColorDirective } from './directives/s-color.directive';
     ListeColleguesComponentComponent,
     AccueilComponentComponent,
     ScorePipe,
-    SColorDirective
+    SColorDirective,
+    LoopDirective
   ],
   imports: [
     BrowserModule,
