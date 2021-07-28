@@ -8,6 +8,7 @@ import { CollegueComponent } from './collegue/collegue.component';
 import { ListeColleguesComponentComponent } from './liste-collegues-component/liste-collegues-component.component';
 import { AccueilComponentComponent } from './accueil-component/accueil-component.component';
 import { ScorePipe } from './pipes/score.pipe';
+import { SColorDirective } from './directives/s-color.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ScorePipe } from './pipes/score.pipe';
     CollegueComponent,
     ListeColleguesComponentComponent,
     AccueilComponentComponent,
-    ScorePipe
+    ScorePipe,
+    SColorDirective
   ],
   imports: [
     BrowserModule,
