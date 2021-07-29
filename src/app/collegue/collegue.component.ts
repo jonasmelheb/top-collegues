@@ -9,6 +9,7 @@ import {DataService} from "../services/data.service";
 export class CollegueComponent implements OnInit {
 
   @Input() collegue?: Collegue;
+  err = false;
 
   constructor(private service:DataService) { }
 
@@ -16,9 +17,21 @@ export class CollegueComponent implements OnInit {
   }
 
   incrementScore(avis: Avis, collegue:Collegue) {
-    this.service.donnerUnAvis(collegue, avis)
-      .then(r => console.log(r))
-      .catch(err => console.log(err))
+    if (this.collegue) {
+      let votes = {
+        collegue,
+        avis,
+        score: collegue.score
+      }
+      this.service.publierVotesCourant(votes)
+
+      this.service.donnerUnAvis(this.collegue, avis)
+        .subscribe(
+          collegue => this.collegue = collegue,
+          () => this.err = false
+        )
+    }
+
   }
 
   get desactiverJaime(): boolean {

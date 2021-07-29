@@ -5,14 +5,18 @@
           Oops, je n'ai pas pu récupéré de votes.
         </p>
         <ng-template #listVotes>
-          <div *ngFor="let vote of votes" class="border mb-2">
-            <div class="row">
+          <div *ngFor="let vote of votes; let i=index; " class="border mb-2" [id]="i">
+            <div class="row" #i>
              <div class="col-2 mt-2">
-               <img [src]="vote.collegue.photo">
+               <img [src]="vote.collegue.photo" class="w-100">
              </div>
-              <div class="col-6 ml-5">
-                <p>{{ vote.collegue.nom | uppercase}}</p>
-                <button class="btn btn-danger">Supprimer</button>
+              <div class="col-10">
+                <p>{{ vote.collegue.nom | uppercase}} - {{ vote.collegue.prenom | uppercase}}</p>
+                <p>{{ vote.collegue.nom }} est <span *ngIf="vote.avis === 'AIMER' else deteste">Aimé</span>, Il a désormais un score de {{ vote.score }} </p>
+                <ng-template #deteste>
+                  <span>Détesté</span>
+                </ng-template>
+                <button (click)="removeElement(i)" class="btn btn-danger">Supprimer</button>
               </div>
             </div>
           </div>

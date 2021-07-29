@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {Vote, Votes} from "../models";
 import {DataService} from "../services/data.service";
 
@@ -14,9 +14,17 @@ export class HistoriqueVotesComponent implements OnInit {
   constructor(private service:DataService) { }
 
   ngOnInit(): void {
+    this.service.currentVotes.subscribe(votes =>this.votes.unshift(votes));
+
     this.service.listerVotes()
-      .then(votes => this.votes = votes)
-      .catch(() => this.msgErr = true)
+      .subscribe(
+        votes => this.votes = votes,
+        err => this.msgErr = true
+      )
+  }
+
+  removeElement(indexVoteASupprimer: number) {
+    this.votes.splice(indexVoteASupprimer, 1);
   }
 
 }

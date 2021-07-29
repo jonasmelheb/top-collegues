@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Collegue } from '../models';
-import { DataService } from '../services/data.service';
+import {Component, OnInit} from '@angular/core';
+import {Collegue} from '../models';
+import {DataService} from '../services/data.service';
 
 @Component({
   selector: 'app-accueil',
@@ -10,14 +10,17 @@ export class AccueilComponent implements OnInit {
   collegues: Collegue[] = [];
   msgErr = false;
 
-  constructor(private service: DataService) { }
+  constructor(private service: DataService) {
+  }
 
   ngOnInit(): void {
   }
 
   refresh() {
     this.service.listerCollegues()
-      .then(collegues => this.collegues = collegues)
-      .catch(() => this.msgErr = true)
+      .subscribe(
+        collegues => this.collegues = collegues,
+        () => this.msgErr = true
+      )
   }
 }

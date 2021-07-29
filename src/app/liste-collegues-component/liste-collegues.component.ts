@@ -15,7 +15,9 @@ export class ListeColleguesComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.listerCollegues()
-      .then(collegues => this.collegues = collegues)
-      .catch(() => this.msgErr = true)
+      .subscribe(
+        collegues => this.collegues = collegues,
+        () => this.msgErr = true
+      )
   }
 }

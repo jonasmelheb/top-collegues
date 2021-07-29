@@ -11,6 +11,7 @@ import { ScorePipe } from './pipes/score.pipe';
 import { SColorDirective } from './directives/s-color.directive';
 import { LoopDirective } from './directives/loop.directive';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HistoriqueVotesComponent } from './historique-votes/historique-votes.co
   imports: [
     BrowserModule,
     NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

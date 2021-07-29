@@ -1,7 +1,7 @@
 <ng-container *ngIf="collegue; else elseBlock">
-  <div class="text-center mt-5 ">
+  <div class="text-center mt-5">
     <img [src]="collegue.photo">
-    <p>{{ collegue.pseudo | uppercase}}</p>
+    <p>{{ collegue.nom | uppercase}} - {{ collegue.prenom | uppercase}}</p>
     <p SColor>{{ collegue.score | score}}</p>
   </div>
   <app-avis

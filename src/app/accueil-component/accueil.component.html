@@ -1,3 +1,9 @@
+<div class="border">
+  <h1 >Application Top Collègues</h1>
+  <h4>Les meilleurs collègues du moments </h4>
+</div>
 <button (click)="refresh()" class="btn btn-success m-3">Rafraichir la liste</button>
-<app-liste-collegues [collegues]="collegues"></app-liste-collegues>
-<app-historique-votes></app-historique-votes>
+<div class="row">
+  <app-liste-collegues [collegues]="collegues" class="col-8"></app-liste-collegues>
+  <app-historique-votes class="col-4"></app-historique-votes>
+</div>
