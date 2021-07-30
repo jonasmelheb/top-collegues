@@ -1,0 +1,39 @@
+<form class="form-group" appNomPrenomValidator [formGroup]="form">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label>Pseudo</label>
+      <input appPseudoValidator formControlName="pseudo" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.pseudo.errors }">
+      <div class="invalid-feedback">
+        pseudo est requis & doit faire min 2 car
+      </div>
+      <div class="error" *ngIf="f.pseudo.errors?.usernameExists">
+        Le pseudo existe déjà
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label>nom</label>
+      <input formControlName="nom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }">
+      <div class="invalid-feedback">
+        nom est requis & doit faire min 2 car
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label>prenom</label>
+      <input formControlName="prenom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.prenom.errors  }">
+      <div class="invalid-feedback">
+        prénom est requis & doit faire min 2 car
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>photo</label>
+      <input formControlName="photo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.photo.errors }">
+      <div class="invalid-feedback">
+        Url est requis & doit faire min 2 car
+      </div>
+    </div>
+  </div>
+  <button (click)="createCollegue()" class="btn btn-success" [disabled]="formAll.errors">Submit</button>
+  <div class="error" *ngIf="formAll.errors?.nomPrenomIdentique && f.nom.dirty">
+    Le nom et le prénom ne doit pas etre identique
+  </div>
+</form>

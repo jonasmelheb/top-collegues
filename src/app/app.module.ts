@@ -13,9 +13,10 @@ import { LoopDirective } from './directives/loop.directive';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NomPrenomValidatorDirective } from './validators/nom-prenom-validator.directive';
 import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
+import { NouveauCollegueReactiveFormComponent } from './nouveau-collegue-reactive-form/nouveau-collegue-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +31,15 @@ import { PseudoValidatorDirective } from './validators/pseudo-validator.directiv
     HistoriqueVotesComponent,
     NouveauCollegueTemplateFormComponent,
     NomPrenomValidatorDirective,
-    PseudoValidatorDirective
+    PseudoValidatorDirective,
+    NouveauCollegueReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

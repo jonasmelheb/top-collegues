@@ -3,9 +3,13 @@
   <h4>Les meilleurs collègues du moments </h4>
 </div>
 <button (click)="refresh()" class="btn btn-success m-3">Rafraichir la liste</button>
-<button (click)="showForm()" class="btn btn-success m-3">Ajouter un collegue</button>
-<div *ngIf="show">
+<button (click)="showFormMethod()" class="btn btn-success m-3">Ajouter un collegue(form)</button>
+<button (click)="showReactiveFormMethod()" class="btn btn-success m-3">Ajouter un collegue(ReactivForm)</button>
+<div *ngIf="showForm">
   <app-nouveau-collegue-template-form></app-nouveau-collegue-template-form>
+</div>
+<div *ngIf="showReactiveForm">
+  <app-nouveau-collegue-reactive-form></app-nouveau-collegue-reactive-form>
 </div>
 <div class="row">
   <app-liste-collegues [collegues]="collegues" class="col-8"></app-liste-collegues>
