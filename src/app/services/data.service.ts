@@ -50,4 +50,8 @@ export class DataService {
   listerVotes(): Observable<Votes[]> {
     return this.http.get<Votes[]>(environment.urlResourceVote)
   }
+
+  createCollegue(collegue:Collegue): Observable<Collegue> {
+    return this.http.post<Collegue>(environment.urlResourceCollegue, collegue)
+  }
 }

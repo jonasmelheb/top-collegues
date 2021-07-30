@@ -1,8 +1,12 @@
 <div class="border">
-  <h1 >Application Top Collègues</h1>
+  <h1>Application Top Collègues</h1>
   <h4>Les meilleurs collègues du moments </h4>
 </div>
 <button (click)="refresh()" class="btn btn-success m-3">Rafraichir la liste</button>
+<button (click)="showForm()" class="btn btn-success m-3">Ajouter un collegue</button>
+<div *ngIf="show">
+  <app-nouveau-collegue-template-form></app-nouveau-collegue-template-form>
+</div>
 <div class="row">
   <app-liste-collegues [collegues]="collegues" class="col-8"></app-liste-collegues>
   <app-historique-votes class="col-4"></app-historique-votes>

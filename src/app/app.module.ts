@@ -12,6 +12,10 @@ import { SColorDirective } from './directives/s-color.directive';
 import { LoopDirective } from './directives/loop.directive';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import {HttpClientModule} from "@angular/common/http";
+import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
+import {FormsModule} from "@angular/forms";
+import { NomPrenomValidatorDirective } from './validators/nom-prenom-validator.directive';
+import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 
 @NgModule({
   declarations: [
@@ -23,12 +27,16 @@ import {HttpClientModule} from "@angular/common/http";
     ScorePipe,
     SColorDirective,
     LoopDirective,
-    HistoriqueVotesComponent
+    HistoriqueVotesComponent,
+    NouveauCollegueTemplateFormComponent,
+    NomPrenomValidatorDirective,
+    PseudoValidatorDirective
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ import {DataService} from '../services/data.service';
 export class AccueilComponent implements OnInit {
   collegues: Collegue[] = [];
   msgErr = false;
-
+  show = false
   constructor(private service: DataService) {
   }
 
@@ -22,5 +22,9 @@ export class AccueilComponent implements OnInit {
         collegues => this.collegues = collegues,
         () => this.msgErr = true
       )
+  }
+
+  showForm() {
+    this.show = true;
   }
 }

@@ -1,0 +1,39 @@
+<form (ngSubmit)="createCollegue()" #createForm="ngForm" class="form-group" appNomPrenomValidator>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label>Pseudo</label>
+      <input appPseudoValidator name="pseudo" [(ngModel)]="collegue.pseudo" #pseudo="ngModel" required minlength="2" class="form-control" [ngClass]="{ 'is-invalid': pseudo.invalid && pseudo.dirty }">
+      <div class="invalid-feedback" *ngIf="pseudo.invalid && pseudo.dirty">
+        pseudo est requis & doit faire min 2 car
+      </div>
+      <div *ngIf="pseudo.errors?.usernameExists" class="error">
+        Le pseudo existe déjà
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label>nom</label>
+      <input name="nom" [(ngModel)]="collegue.nom" #nom="ngModel" required minlength="2" class="form-control" [ngClass]="{ 'is-invalid': nom.invalid && nom.dirty }">
+      <div class="invalid-feedback" *ngIf="nom.invalid && nom.dirty">
+        nom est requis & doit faire min 2 car
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label>prenom</label>
+      <input name="prenom" [(ngModel)]="collegue.prenom" #prenom="ngModel" required minlength="2" class="form-control" [ngClass]="{ 'is-invalid': prenom.invalid && prenom.dirty }">
+      <div class="invalid-feedback" *ngIf="prenom.invalid && prenom.dirty">
+        prénom est requis & doit faire min 2 car
+      </div>
+      </div>
+    <div class="col-md-6 mb-3">
+      <label>photo</label>
+      <input name="photo" [(ngModel)]="collegue.photo" #photo="ngModel" required minlength="2" class="form-control" [ngClass]="{ 'is-invalid': photo.invalid && photo.dirty }">
+      <div class="invalid-feedback" *ngIf="photo.invalid && photo.dirty">
+        Url est requis & doit faire min 2 car
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="createForm.invalid">Submit</button>
+    <div class="error" *ngIf="createForm.errors?.nomPrenomIdentique && nom.dirty">
+      Le nom et le prénom ne doit pas etre identique
+    </div>
+</form>
