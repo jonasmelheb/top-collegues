@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Collegue} from "../models";
-import { DataService } from '../services/data.service';
+import {Collegue} from "../../models";
+import { DataService } from '../../Common/services/data.service';
 
 @Component({
   selector: 'app-nouveau-collegue-reactive-form',

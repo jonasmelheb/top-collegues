@@ -14,9 +14,6 @@ export class NomPrenomValidatorDirective implements Validator {
   }
 
   validate(control: AbstractControl): ValidationErrors | null {
-    // TODO écrire la règle de validation
-    // En cas de règle respecté (nom != prenom), retourner null
-    // Sinon retourner l'objet { nomPrenomIdentique : true }
     if (control.value.nom != control.value.prenom) {
       return null;
     }

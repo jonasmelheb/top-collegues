@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {Vote, Votes} from "../models";
-import {DataService} from "../services/data.service";
+import {Vote, Votes} from "../../models";
+import {DataService} from "../../Common/services/data.service";
 
 @Component({
   selector: 'app-historique-votes',

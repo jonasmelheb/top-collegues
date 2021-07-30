@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Collegue } from '../models';
-import { DataService } from '../services/data.service';
+import { Collegue } from '../../models';
+import { DataService } from '../../Common/services/data.service';
 
 @Component({
   selector: 'app-nouveau-collegue-template-form',

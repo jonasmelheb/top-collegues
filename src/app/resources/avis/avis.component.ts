@@ -1,6 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import {Component, Input, OnInit, Output} from '@angular/core';
-import {Avis} from "../models";
+import {Avis} from "../../models";
 
 @Component({
   selector: 'app-avis',

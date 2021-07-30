@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Avis, Collegue} from "../models";
-import {DataService} from "../services/data.service";
+import {Avis, Collegue} from "../../models";
+import {DataService} from "../../Common/services/data.service";
 
 @Component({
   selector: 'app-collegue',

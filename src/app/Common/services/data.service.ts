@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Avis, Collegue, Vote, Votes} from "../models";
+import {Avis, Collegue, Vote, Votes} from "../../models";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import { Subject } from 'rxjs';

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Collegue} from '../models';
-import {DataService} from "../services/data.service";
+import {Collegue} from '../../models';
+import {DataService} from "../../Common/services/data.service";
 
 @Component({
   selector: 'app-liste-collegues',

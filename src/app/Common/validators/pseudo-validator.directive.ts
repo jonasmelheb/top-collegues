@@ -1,10 +1,10 @@
 import {Directive} from '@angular/core';
 import {AbstractControl, AsyncValidator, NG_ASYNC_VALIDATORS, ValidationErrors} from "@angular/forms";
 import {Observable} from "rxjs";
-import {Collegue} from '../models';
+import {Collegue} from '../../models';
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
-import {environment} from "../../environments/environment";
+import {environment} from "../../../environments/environment";
 
 @Directive({
   selector: '[appPseudoValidator]',
