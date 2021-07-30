@@ -15,7 +15,6 @@ export class HistoriqueVotesComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.currentVotes.subscribe(votes =>this.votes.unshift(votes));
-
     this.service.listerVotes()
       .subscribe(
         votes => this.votes = votes,

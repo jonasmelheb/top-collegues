@@ -3,6 +3,8 @@ import {Avis, Collegue, Vote, Votes} from "../models";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import {tap} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +20,13 @@ export class DataService {
     return this.subjectCurrentVotes.asObservable();
   }
 
-  publierVotesCourant(voteChoisi: Votes) {
-    this.subjectCurrentVotes.next(voteChoisi);
+  publierVotesCourant(vote: Votes) {
+    this.subjectCurrentVotes.next(vote);
   }
 
 
   listerCollegues(): Observable<Collegue[]> {
-    return this.http.get<Collegue[]>('https://formation-angular-collegues.herokuapp.com/collegues')
+    return this.http.get<Collegue[]>(environment.urlResourceCollegue)
   }
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
@@ -32,10 +34,20 @@ export class DataService {
       pseudo: collegue.pseudo,
       avis
     }
-    return this.http.post<Collegue>('https://formation-angular-collegues.herokuapp.com/votes', vote)
+    return this.http.post<Collegue>(environment.urlResourceVote, vote)
+      .pipe(
+        tap(colApresVote => {
+            this.publierVotesCourant({
+              score: colApresVote.score,
+              collegue: colApresVote,
+              avis
+            });
+          }
+        ));
+
   }
 
   listerVotes(): Observable<Votes[]> {
-    return this.http.get<Votes[]>('https://formation-angular-collegues.herokuapp.com/votes')
+    return this.http.get<Votes[]>(environment.urlResourceVote)
   }
 }
