@@ -18,7 +18,6 @@ import { NomPrenomValidatorDirective } from './Common/validators/nom-prenom-vali
 import { PseudoValidatorDirective } from './Common/validators/pseudo-validator.directive';
 import { NouveauCollegueReactiveFormComponent } from './resources/nouveau-collegue-reactive-form/nouveau-collegue-reactive-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from "@angular/material/button";
 import {RouterModule} from "@angular/router";
 import {ROUTES} from "./app.routes";
 import { ViewCollegueComponent } from './resources/view-collegue/view-collegue.component';
@@ -47,7 +46,6 @@ import { ViewCollegueComponent } from './resources/view-collegue/view-collegue.c
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],
