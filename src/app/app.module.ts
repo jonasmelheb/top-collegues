@@ -11,12 +11,17 @@ import { ScorePipe } from './Common/pipes/score.pipe';
 import { SColorDirective } from './Common/directives/s-color.directive';
 import { LoopDirective } from './Common/directives/loop.directive';
 import { HistoriqueVotesComponent } from './resources/historique-votes/historique-votes.component';
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { NouveauCollegueTemplateFormComponent } from './resources/nouveau-collegue-template-form/nouveau-collegue-template-form.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NomPrenomValidatorDirective } from './Common/validators/nom-prenom-validator.directive';
 import { PseudoValidatorDirective } from './Common/validators/pseudo-validator.directive';
 import { NouveauCollegueReactiveFormComponent } from './resources/nouveau-collegue-reactive-form/nouveau-collegue-reactive-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from "@angular/material/button";
+import {RouterModule} from "@angular/router";
+import {ROUTES} from "./app.routes";
+import { ViewCollegueComponent } from './resources/view-collegue/view-collegue.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +37,18 @@ import { NouveauCollegueReactiveFormComponent } from './resources/nouveau-colleg
     NouveauCollegueTemplateFormComponent,
     NomPrenomValidatorDirective,
     PseudoValidatorDirective,
-    NouveauCollegueReactiveFormComponent
+    NouveauCollegueReactiveFormComponent,
+    ViewCollegueComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

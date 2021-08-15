@@ -1,3 +1,4 @@
+<h3>Template form</h3>
 <form (ngSubmit)="createCollegue()" #createForm="ngForm" class="form-group" appNomPrenomValidator>
   <div class="form-row">
     <div class="col-md-4 mb-3">
@@ -36,4 +37,5 @@
     <div class="error" *ngIf="createForm.errors?.nomPrenomIdentique && nom.dirty">
       Le nom et le prénom ne doit pas etre identique
     </div>
+  <button routerLink="" class="btn btn-info mx-3">Retour</button>
 </form>

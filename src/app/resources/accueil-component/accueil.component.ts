@@ -27,9 +27,11 @@ export class AccueilComponent implements OnInit {
 
   showFormMethod() {
     this.showForm = true;
+    this.showReactiveForm = false;
   }
 
   showReactiveFormMethod() {
     this.showReactiveForm = true;
+    this.showForm = false;
   }
 }

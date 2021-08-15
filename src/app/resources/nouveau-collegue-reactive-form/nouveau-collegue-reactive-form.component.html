@@ -1,8 +1,9 @@
+<h3>Reactive form</h3>
 <form class="form-group" appNomPrenomValidator [formGroup]="form">
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label>Pseudo</label>
-      <input appPseudoValidator formControlName="pseudo" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.pseudo.errors }">
+      <input appPseudoValidator formControlName="pseudo" class="form-control"  [ngClass]="{ 'is-invalid': f.pseudo.errors && f.pseudo.dirty }">
       <div class="invalid-feedback">
         pseudo est requis & doit faire min 2 car
       </div>
@@ -12,28 +13,29 @@
     </div>
     <div class="col-md-4 mb-3">
       <label>nom</label>
-      <input formControlName="nom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }">
+      <input formControlName="nom" class="form-control" [ngClass]="{ 'is-invalid': f.nom.errors&& f.nom.dirty }">
       <div class="invalid-feedback">
         nom est requis & doit faire min 2 car
       </div>
     </div>
     <div class="col-md-4 mb-3">
       <label>prenom</label>
-      <input formControlName="prenom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.prenom.errors  }">
+      <input formControlName="prenom" class="form-control" [ngClass]="{ 'is-invalid': f.prenom.errors && f.prenom.dirty }">
       <div class="invalid-feedback">
         prénom est requis & doit faire min 2 car
       </div>
     </div>
     <div class="col-md-6 mb-3">
       <label>photo</label>
-      <input formControlName="photo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.photo.errors }">
+      <input formControlName="photo" class="form-control" [ngClass]="{ 'is-invalid': f.photo.errors && f.photo.dirty }">
       <div class="invalid-feedback">
         Url est requis & doit faire min 2 car
       </div>
     </div>
   </div>
-  <button (click)="createCollegue()" class="btn btn-success" [disabled]="formAll.errors">Submit</button>
+  <button (click)="createCollegue()" class="btn btn-success" [disabled]="formAll.invalid && formAll.errors">Submit</button>
   <div class="error" *ngIf="formAll.errors?.nomPrenomIdentique && f.nom.dirty">
     Le nom et le prénom ne doit pas etre identique
   </div>
+  <button routerLink="" class="btn btn-info mx-3">Retour</button>
 </form>

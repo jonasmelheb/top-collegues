@@ -54,4 +54,8 @@ export class DataService {
   createCollegue(collegue:Collegue): Observable<Collegue> {
     return this.http.post<Collegue>(environment.urlResourceCollegue, collegue)
   }
+
+  getCollegueByPseudo(pseudo: string | null): Observable<Collegue> {
+    return this.http.get<Collegue>(environment.urlResourceCollegue + `/${pseudo}`)
+  }
 }

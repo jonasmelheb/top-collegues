@@ -1,19 +1,16 @@
 <ng-container *ngIf="collegue; else elseBlock">
   <div class="text-center mt-5 rounded-3" routerLink="{{ collegue.pseudo }}">
-    <img [src]="collegue.photo" class="rounded-circle">
-    <p>{{ collegue.nom | uppercase}} - {{ collegue.prenom | uppercase}}</p>
+    <img [src]="collegue.photo" class="">
+    <p SColor>{{ collegue.pseudo }}</p>
     <p SColor>{{ collegue.score | score}}</p>
+    <p>Nom: {{ collegue.nom | uppercase}}</p>
+    <p>Prénom: {{ collegue.prenom | uppercase}}</p>
+    <button routerLink="" class="btn btn-info mx-3">Retour</button>
   </div>
-  <app-avis
-    (avis)="incrementScore($event, collegue)"
-    [desactiveJaime]="desactiverJaime"
-    [desactiveDeteste]="desactiverDeteste">
-  </app-avis>
 </ng-container>
 <ng-template #elseBlock>
   <div>
     Oops - Collègue obligatoire
   </div>
 </ng-template>
-
 
